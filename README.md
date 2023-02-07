@@ -1,7 +1,9 @@
 # Setup
 
 
-`docker compose up`
+````bash
+$ docker compose up
+```
 
 # Usage
 

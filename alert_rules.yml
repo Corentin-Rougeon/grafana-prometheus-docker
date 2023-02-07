@@ -1,0 +1,22 @@
+groups:  
+  - name: NodeExportMem
+    rules:
+      - alert: NodeExportMemExceeded
+        # Condition for alerting
+        expr: (1 - (node_memory_MemAvailable_bytes{} / node_memory_MemTotal_bytes{})) > 0.33
+        # Annotation - additional informational labels to store more information
+        annotations:
+          title: 'the used memory has crossed 33%'
+          description: 'the usage of the system memory is above 33%'
+        # Labels - additional labels to be attached to the alert
+        labels:
+          severity: 'critical'
+  - name: NodeExportCPU
+    rules:
+      - alert: NodeExportCPUExceeded
+        expr: ((sum by(instance) (irate(node_cpu_seconds_total{mode!="idle"}[1m])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{}[1m]))))) > 0.6
+        annotations:
+          title: 'the cpu usage has crossed 60%'
+          description: 'the usage of the system cpu is above 60%'
+        labels:
+          severity: 'critical'

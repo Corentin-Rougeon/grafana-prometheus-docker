@@ -1,7 +1,7 @@
 # Setup
 
 
-````bash
+```bash
 $ docker compose up
 ```
 

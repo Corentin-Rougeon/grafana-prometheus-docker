@@ -5,13 +5,13 @@
 
 # Usage
 
-## grafana dashboard
+### grafana dashboard
 `127.0.0.1:3000`
 
-## prometheus dashboard
+### prometheus dashboard
 `127.0.0.1:9090`
 
-## alertmanager dashboard
+### alertmanager dashboard
 `127.0.0.1:9093`
 
 # docker image requirements

@@ -41,7 +41,7 @@ groups:
         expr: <your_prometheus_expression>
         # Annotation - additional informational labels to store more information
         annotations:
-          title: '<your_alert_tittle>
+          title: '<your_alert_tittle>'
           description: '<your_alert_description>'
         # Labels - additional labels to be attached to the alert
         labels:
